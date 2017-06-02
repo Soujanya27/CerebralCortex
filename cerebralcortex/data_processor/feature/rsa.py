@@ -81,10 +81,7 @@ def compute_rsa(valleys_datastream: DataStream,
         if rsa_sample != -1.0:
             rsa_datapoints.append(DataPoint.from_tuple(start_time=valleys_datastream.data[index].start_time,
                                                        end_time=valleys_datastream.data[index + 2].start_time,
-                                                       sample=rsa_calculate(valleys_datastream.data[index].start_time,
-                                                                            valleys_datastream.data[
-                                                                                index + 2].start_time,
-                                                                            rr_datastream)))
+                                                       sample=rsa_sample))
     if not rsa_datapoints:
         print('Error computing RSA!')
     rsa_ds.data = rsa_datapoints
