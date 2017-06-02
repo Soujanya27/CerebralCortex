@@ -62,8 +62,8 @@ def rsa_calculate(start_time,
     return result.sample
 
 
-def compute_rsa(valleys_datastream: DataStream,
-                rr_datastream: DataStream):
+def compute_rsa_datastream(valleys_datastream: DataStream,
+                           rr_datastream: DataStream):
     """
 
     :param valleys_datastream:
@@ -107,7 +107,7 @@ def rsa_feature_computation(valleys_datastream: DataStream,
     if (len(valleys_datastream.data) or len(rr_datastream)) == 0:
         return None
 
-    rsa_datastream = compute_rsa(valleys_datastream, rr_datastream)
+    rsa_datastream = compute_rsa_datastream(valleys_datastream, rr_datastream)
 
     # perform windowing of rsa_datastream
 
